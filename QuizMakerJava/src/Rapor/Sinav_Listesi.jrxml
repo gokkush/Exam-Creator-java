@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e42d0a8c-efd0-4e57-81fd-569452ad94ec">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[Select * from Sinav_Yeri order by Ogrenci_Numarasi]]>
+	</queryString>
+	<field name="Ders" class="java.lang.Object"/>
+	<field name="Bina" class="java.lang.Object"/>
+	<field name="Salon" class="java.lang.Object"/>
+	<field name="Gozetmen" class="java.lang.Object"/>
+	<field name="Ogrenci_Numarasi" class="java.lang.Object"/>
+	<field name="Ogrenci_Adi" class="java.lang.Object"/>
+	<field name="Ogrenci_Soyadi" class="java.lang.Object"/>
+	<field name="Sira" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="94" width="554" height="42" uuid="6b754941-4f7d-4f37-ab70-7aa7d58d9698"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Her türlü sınav, uygulama, laboratuvar, atölye, ev ödevi, yarıyıl içi veya yıl içi proje ve benzeri diğer çalışmalarda; kopya çeken, kopya çekme girişiminde bulunan ve kopya çekilmesine yardım eden veya ilgili evrakın incelenmesinden kopya çektiği sonradan anlaşılan bir öğrenci, o sınav ya da çalışmadan sıfır not almış sayılır.  ilgili öğrenciler hakkında, ayrıca 13/1/1985 tarihli ve 18634 sayılı Resmî Gazete’de yayımlanan Yükseköğretim Kurumları Öğrenci Disiplin Yönetmeliği hükümleri uygulanır.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1" y="62" width="69" height="15" forecolor="#736343" uuid="25a837cd-7753-43ea-ad26-67e2a7e7e8dc"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Ders]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="70" y="62" width="269" height="15" uuid="37bac6de-00cb-4ad0-a5cd-9a338db7f8e8"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Ders}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="1" y="79" width="69" height="15" forecolor="#736343" uuid="11fda04b-2eed-49d8-91d8-77eb9aff9b5f"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Bina]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="70" y="79" width="269" height="15" uuid="dd4c30b5-e5fc-4c46-8cee-f7864f1bb0ac"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Bina}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Title" x="120" y="0" width="333" height="19" uuid="ab78f37b-da9e-47ef-bb4d-84ac882b9b64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="15" pdfFontName="Times-Roman" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[T.C.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="120" y="19" width="333" height="20" uuid="330918d1-c07a-4a88-acad-e983291e7c42"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="16" pdfFontName="Times-Roman" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[KÜTAHYA DUMLUPINAR ÜNİVERSİTESİ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="453" y="0" width="99" height="94" uuid="b35d1238-b97f-4b46-8856-580f99750f2a"/>
+				<imageExpression><![CDATA[System.getProperty("user.dir")+"\\src\\Rapor\\"+"dpu-logo3.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="4e3c8230-2b61-450d-9480-d0673a58d58d"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="396" y="0" width="97" height="15" forecolor="#736343" uuid="77cabd28-c890-4107-8e33-4615da29ab64"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Sınav Salonu:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1" y="0" width="119" height="15" forecolor="#736343" uuid="f53ca013-a7ed-41c1-b67b-5fb45620dfce"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Öğrenci Numarası:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="120" y="0" width="155" height="15" forecolor="#736343" uuid="6f03fc21-5755-4acd-b6b8-7c2c7c1e747e"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Öğrenci Adı:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="275" y="0" width="121" height="15" forecolor="#736343" uuid="1be125ca-e2c0-4557-95d4-a4d58a036912"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Öğrenci Soyadı:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="493" y="0" width="59" height="15" forecolor="#736343" uuid="138e6bc9-b45b-4cfb-80e5-7f58d881c628"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Sıra:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15" uuid="c31c93cf-48f8-4ab0-ba61-24d90aeea186"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="396" y="0" width="97" height="15" uuid="f2c451e3-e6ff-4646-a32a-b4e31b4f2147"/>
+					<textElement>
+						<font pdfEncoding="Cp1254"/>
+					</textElement>
+					<textFieldExpression><![CDATA[""+$F{Salon}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="1" y="0" width="119" height="15" uuid="47de9fd2-9407-4802-9d42-684319a53f85"/>
+					<textElement>
+						<font pdfEncoding="Cp1254"/>
+					</textElement>
+					<textFieldExpression><![CDATA[""+$F{Ogrenci_Numarasi}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="120" y="0" width="155" height="15" uuid="a056f0c9-6340-49ad-83f0-6b727f9b5b44"/>
+					<textElement>
+						<font pdfEncoding="Cp1254"/>
+					</textElement>
+					<textFieldExpression><![CDATA[""+$F{Ogrenci_Adi}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="275" y="0" width="121" height="15" uuid="a78fae7d-2f12-4970-8cfa-d1cd7953a7eb"/>
+					<textElement>
+						<font pdfEncoding="Cp1254"/>
+					</textElement>
+					<textFieldExpression><![CDATA[""+$F{Ogrenci_Soyadi}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="493" y="0" width="59" height="15" uuid="89fa988c-abdf-4f1a-bdfe-f06f01dc8b47"/>
+					<textElement>
+						<font pdfEncoding="Cp1254"/>
+					</textElement>
+					<textFieldExpression><![CDATA[""+$F{Sira}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="9" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="b9f9823e-6633-40e7-99a5-b489190acd1d"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="7f29236b-6573-4ebb-ad89-093687905631"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="420604cd-8144-4b2c-adbe-198e148fc305"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false" pdfEncoding="Cp1254"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="457" y="0" width="76" height="20" forecolor="#736343" uuid="1b5ea687-ccad-4234-b4fd-082650dba016"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false" pdfEncoding="Cp1254"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Sayfa "+$V{PAGE_NUMBER}+" - "]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="fd4ee122-0896-4c2d-a383-521ac6562909"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false" pdfEncoding="Cp1254"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

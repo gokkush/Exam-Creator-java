@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7c1ce252-c9b3-40c8-8b30-162acc160890">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT*  FROM Sinav Ssinav INNER JOIN Sinav_Sorulari Soru ON Ssinav.id=Soru.sinav_id where Ssinav.id=2]]>
+	</queryString>
+	<field name="id" class="java.lang.Object"/>
+	<field name="gozetmen_Adi" class="java.lang.Object"/>
+	<field name="sinav_Tarihi" class="java.lang.Object"/>
+	<field name="sinav_Yeri" class="java.lang.Object"/>
+	<field name="ders" class="java.lang.Object"/>
+	<field name="save_date" class="java.lang.Object"/>
+	<field name="save_user" class="java.lang.Object"/>
+	<field name="edit_date" class="java.lang.Object"/>
+	<field name="edit_user" class="java.lang.Object"/>
+	<field name="soru" class="java.lang.Object"/>
+	<field name="cevap" class="java.lang.Object"/>
+	<field name="sinav_id" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="156" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="94" width="597" height="60" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="776bad1c-9a39-4a76-bde4-b28395afeab3"/>
+			</frame>
+			<staticText>
+				<reportElement style="Title" x="86" y="0" width="385" height="19" uuid="d678c755-d352-448d-b2d1-4b40f450f21a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="15" pdfFontName="Times-Roman" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[T.C.]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="88" y="94" width="160" height="15" uuid="adbcecb8-6bf6-4764-8f2e-9baaca4c5737"/>
+				<textElement>
+					<font fontName="Tahoma" pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{ders}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Title" x="86" y="19" width="385" height="20" uuid="2d3af849-45dc-429d-9636-214639c2325b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="16" pdfFontName="Times-Roman" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[KÜTAHYA DUMLUPINAR ÜNİVERSİTESİ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="86" y="39" width="385" height="20" uuid="ba8e2f85-19c2-4171-8886-9512d68d4402"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="16" pdfFontName="Times-Roman" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[MÜHENDİSLİK FAKÜLTESİ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1" y="109" width="87" height="15" forecolor="#736343" uuid="1b526480-d8b6-4dd6-b158-d88e47af179b"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Gozetmen :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1" y="94" width="87" height="15" forecolor="#736343" uuid="e71e934e-abd7-4360-897c-a18d10f18d06"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Ders:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1" y="124" width="86" height="15" forecolor="#736343" uuid="ae1eef5f-81b8-43cd-89f6-e9a5da8f9bb1"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Sınav Tarihi:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1" y="139" width="86" height="15" forecolor="#736343" uuid="b90e9938-af56-4c4f-b803-cdb14a3a0311"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Sınav Yeri:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="88" y="109" width="160" height="15" uuid="2b742228-a1c4-44bc-91df-c7f4d9ca0fea"/>
+				<textFieldExpression><![CDATA[""+$F{gozetmen_Adi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="88" y="124" width="160" height="15" uuid="2261ac07-d76f-4d48-a926-fb2ea54e92cc"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{sinav_Tarihi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="88" y="139" width="160" height="15" uuid="4ad307e2-9c4a-4326-b8f9-9eb796def2d2"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{sinav_Yeri}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="256" y="115" width="70" height="20" forecolor="#736343" uuid="253a6345-f419-429e-8d56-24cae6832f21"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Öğrenci No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="115" width="19" height="20" uuid="1b1e694b-3582-4d33-b245-4b9642f47c5b"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="115" width="19" height="20" uuid="f8750be8-0d80-4212-9fc9-ee9fcb90bfdc"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="364" y="115" width="19" height="20" uuid="8dbed5ba-dd79-4105-bfd7-7a82e5121f97"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="383" y="115" width="19" height="20" uuid="83a66c8a-2605-44b3-ba5b-93e3e891d131"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="115" width="19" height="20" uuid="2d09534b-c170-42cd-abbc-f7a7d8901c4a"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="421" y="115" width="19" height="20" uuid="20aac4d0-0a42-4794-bdf3-a22f7abf507c"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="115" width="19" height="20" uuid="b90283a3-ccc9-430e-b942-63275e3641d4"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="459" y="115" width="19" height="20" uuid="886b2905-9714-41e2-8a3b-694a34931d14"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="115" width="19" height="20" uuid="79a33b3b-4f41-4bd0-85ca-1dbaa75d4469"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="497" y="115" width="19" height="20" uuid="e383ffab-f3ac-4d8e-827f-1f915753ed56"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="516" y="115" width="19" height="20" uuid="e41deb82-dba7-4026-96cf-80fcf3d2ffda"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="535" y="115" width="19" height="20" uuid="85ea0913-4c31-4974-98cb-e99bc6e71b88"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="248" y="135" width="78" height="20" forecolor="#736343" uuid="38dc7c8e-1340-4f5e-bc53-ad1bb959e611"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Ad/Soyadı:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="326" y="154" width="226" height="1" uuid="89d1a6bf-d3c3-441a-af35-310db44502c1"/>
+			</line>
+			<image onErrorType="Blank">
+				<reportElement x="1" y="0" width="85" height="80" uuid="e3d44fe9-9273-411d-a6bd-ff2011d23745"/>
+				<imageExpression><![CDATA[System.getProperty("user.dir")+"\\src\\Rapor\\"+"dpu_logo.jpg"]]></imageExpression>
+			</image>
+			<image onErrorType="Blank">
+				<reportElement x="471" y="0" width="81" height="80" uuid="84fb6d47-337f-4723-9c27-f3a16be342b3"/>
+				<imageExpression><![CDATA[System.getProperty("user.dir")+"\\src\\Rapor\\"+"muh_logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="74412dd7-5bfa-449b-974b-eb2eef109118"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="59" y="0" width="497" height="15" uuid="f6f9a12e-5378-4ecf-b296-086507c0e29c"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{soru}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="59" y="15" width="497" height="15" uuid="e65c3ea9-e3fa-4734-99a5-49d0706edc09"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{cevap}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="3" y="33" width="552" height="1" uuid="18f15c38-a84e-410b-9ac1-8fa8ca217318"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="48" height="15" forecolor="#000000" uuid="b422d484-38d1-45a8-9df0-522a8e2f49b9"/>
+				<textElement textAlignment="Right">
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Soru:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1" y="15" width="47" height="15" forecolor="#000000" uuid="0146a3d1-7585-4970-914a-4916ed21594a"/>
+				<textElement textAlignment="Right">
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Cevap:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="56" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="d0d1551b-9a84-446b-a153-1b32ad83204a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement x="228" y="6" width="57" height="50" uuid="a3866e15-63c6-4fea-9a19-7470c955fb24"/>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+     new com.google.zxing.qrcode.QRCodeWriter().encode(
+         $F{ders}+" "+$F{gozetmen_Adi}+" "+$F{sinav_Tarihi},
+         com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
+			</image>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="94027e07-082b-4842-89d5-0d779231ad48"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="eebb1892-ebf5-4284-9be4-01c7ab8eb435"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false" pdfEncoding="Cp1254"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="435" y="0" width="98" height="20" forecolor="#736343" uuid="a806b266-aa7f-4cf0-8c02-dace32cee796"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false" pdfEncoding="Cp1254"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Sayfa:"+$V{PAGE_NUMBER}+" -"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="f758c94c-81c2-4ca3-a1dc-2c9b5e250512"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false" pdfEncoding="Cp1254"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

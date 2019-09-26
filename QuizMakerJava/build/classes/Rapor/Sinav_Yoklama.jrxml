@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3d75bc9d-463e-4dcd-b811-520f280d76e4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[Select * From Sinav_Yeri where Salon="C-206" order by Sira]]>
+	</queryString>
+	<field name="Ders" class="java.lang.Object"/>
+	<field name="Bina" class="java.lang.Object"/>
+	<field name="Salon" class="java.lang.Object"/>
+	<field name="Gozetmen" class="java.lang.Object"/>
+	<field name="Ogrenci_Numarasi" class="java.lang.Object"/>
+	<field name="Ogrenci_Adi" class="java.lang.Object"/>
+	<field name="Ogrenci_Soyadi" class="java.lang.Object"/>
+	<field name="Sira" class="java.lang.Object"/>
+	<field name="Kod" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="105" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="183" y="64" width="33" height="15" uuid="d292d820-9eea-49d3-986c-7c7f0b113890"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Ders]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="216" y="64" width="156" height="15" uuid="ef849fb9-92bc-43fa-aced-2e26b20ff09d"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Ders}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="64" width="61" height="15" uuid="76d25fda-fa6f-4f16-9815-fc9ade55db59"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Bina]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="61" y="64" width="122" height="15" uuid="9135b3a2-5175-465b-b563-0647b1405732"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Bina}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="79" width="61" height="15" uuid="9de3b890-8e92-45ac-bc87-cd1e19d27449"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Salon]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="61" y="79" width="86" height="15" uuid="21e96e19-0ce5-4599-8e93-e50de33783ee"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Salon}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="372" y="64" width="61" height="15" uuid="4c534a5d-f4c2-4d37-8814-24920c30ed90"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Gözetmen:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="433" y="64" width="120" height="15" uuid="78c7cc9b-1bf4-4b18-9277-537fbf406255"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Gozetmen}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="327" y="79" width="106" height="26" uuid="3a03eca1-4f64-4c5f-8c6a-0d9e370639ec"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Gözetmen İmzası:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="433" y="79" width="120" height="26" uuid="6ff329c8-900e-4f66-8645-842256bb7249"/>
+			</rectangle>
+			<image>
+				<reportElement x="0" y="0" width="71" height="64" uuid="a4db0e6f-9ede-414a-a0a4-65723cfe53cc"/>
+				<imageExpression><![CDATA[System.getProperty("user.dir")+"\\src\\Rapor\\"+"dpu-logo3.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="130" y="23" width="333" height="26" forecolor="#000000" uuid="0bbe6da5-457c-4227-96b3-e936d73a4f92"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="16" pdfFontName="Times-Roman" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[KÜTAHYA DUMLUPINAR ÜNİVERSİTESİ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="130" y="3" width="333" height="20" forecolor="#000000" uuid="f4f60481-ccca-4f62-b21c-27ba092973b0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="15" pdfFontName="Times-Roman" pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[T.C.]]></text>
+			</staticText>
+			<image>
+				<reportElement x="486" y="3" width="67" height="61" uuid="56f7e3b7-f912-42b2-ae65-2e3402a983b1"/>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+     new com.google.zxing.qrcode.QRCodeWriter().encode(
+         $F{Salon}+" "+$F{Gozetmen}+" "+$F{Kod},
+         com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="ecbdba4e-fa03-4e3e-a7de-9650d1afd8e1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="58" y="19" width="125" height="15" uuid="1e761adc-04e3-4116-96ff-a0f28e778318"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Öğrenci Numarası:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="315" y="19" width="129" height="15" uuid="22c93b00-0559-408f-8a68-e1abf53d9426"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Öğrenci Soyadı:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="58" height="15" uuid="35061beb-e8a8-431f-bb71-c31cdd47197d"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Sira]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="444" y="19" width="61" height="15" uuid="af96e7de-f47a-4af8-aa7b-0da7f0ac7468"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[İmza:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="183" y="20" width="131" height="15" uuid="803a31fe-c905-4608-a158-242146508b59"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<text><![CDATA[Öğrenci Adı:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="20" width="555" height="1" uuid="62a2546a-88d4-41cb-a1af-4632ecb38f36"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="58" y="0" width="125" height="15" uuid="e9b0ee1d-3b6f-461f-9f54-12fa1adef07c"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Ogrenci_Numarasi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="184" y="0" width="131" height="15" uuid="e521d439-d5b4-45c5-affb-e895c4ef096f"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Ogrenci_Adi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="315" y="0" width="129" height="15" uuid="59a8d6c7-8993-4ad8-add0-ed916476e238"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Ogrenci_Soyadi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="58" height="15" uuid="6b09670e-6b22-4a63-8bbd-4d2061362d76"/>
+				<textElement>
+					<font pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Sira}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="444" y="0" width="109" height="20" uuid="3541450a-00ef-4fdc-93e4-9203830fd326"/>
+			</rectangle>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="4d6fa184-66ef-40bc-b055-6d4d1b7b9998"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="c430db32-9108-4ae3-aeac-258055c206e6"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false" pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sayfa "+$V{PAGE_NUMBER}+" - "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="0f4acf52-98df-49fa-8795-0e8769112cc3"/>
+				<textElement>
+					<font size="10" isBold="false" pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="6557e5e7-05cd-4311-8eaa-f473b41e6d41"/>
+				<textElement>
+					<font size="10" isBold="false" pdfEncoding="Cp1254"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
